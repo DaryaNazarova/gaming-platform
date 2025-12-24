@@ -6,7 +6,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=BBH+Bartle&display=swap" rel="stylesheet">
-    <title>🎮 ARCADE GAMING PLATFORM</title>
+    <title>🎮 webarcade.dev/</title>
     <style>
         /* ================== ОСНОВНЫЕ СТИЛИ ================== */
         :root {
@@ -77,20 +77,34 @@
         
         /* Глитч эффект */
         @keyframes glitch {
-            0% { transform: translate(0); }
-            20% { transform: translate(-2px, 2px); }
-            40% { transform: translate(-2px, -2px); }
-            60% { transform: translate(2px, 2px); }
-            80% { transform: translate(2px, -2px); }
-            100% { transform: translate(0); }
-        }
+    0% { 
+        transform: translate(0);
+        text-shadow: 2px 0 #ff9100, -2px 0 #00ff00;
+    }
+    25% { 
+        transform: translate(-2px, 1px);
+        text-shadow: 3px 0 #60a5fa, -3px 0 #93c5fd;
+    }
+    50% { 
+        transform: translate(0);
+        text-shadow: 2px 0 #6200ff, -2px 0 #ff00dd;
+    }
+    75% { 
+        transform: translate(2px, -1px);
+        text-shadow: -3px 0 #ffffff, 3px 0 #4b4a4a;
+    }
+    100% { 
+        transform: translate(0);
+        text-shadow: 2px 0 #ffffff, -2px 0 #60a5fa;
+    }
+}
         
-        .glitch {
-            animation: glitch 3s linear infinite;
-            text-shadow: 
-                2px 0 var(--accent-purple),
-                -2px 0 var(--accent-blue);
-        }
+       .glitch {
+        animation: glitch 2s linear infinite;
+        text-shadow: 
+            2px 0 var(--accent-purple),
+            -2px 0 var(--accent-blue);
+}
         
         .container {
             max-width: 1200px;
@@ -816,7 +830,7 @@
             border: 4px solid var(--accent-blue);
             color: var(--accent-blue);
             padding: var(--size-sm) var(--size-lg);
-            font-family: 'Courier New', monospace;
+            font-family: 'Courier', monospace;
             font-weight: bold;
             text-transform: uppercase;
             letter-spacing: 2px;
@@ -851,8 +865,8 @@
     <div class="container">
         <!-- ШАПКА -->
         <header class="header">
-            <h1 class="title glitch">🎮 ARCADE ZONE</h1>
-            <p class="subtitle">ИГРОВЫЕ АВТОМАТЫ | РЕТРО СТИЛЬ | ТОП ИГРОКИ</p>
+            <h1 class="title glitch">🎮 webarcade.dev/</h1>
+            <p class="subtitle">РЕТРО ИГРЫ</p>
         </header>
         
         <!-- НАВИГАЦИЯ -->
@@ -872,36 +886,33 @@
                 <div class="game-card" onclick="startGame('number-match')">
                     <div class="game-icon">🔢</div>
                     <h3 class="game-title">NUMBER MATCH</h3>
-                    <p class="game-desc">Собери нужную сумму чисел. Каждый уровень сложнее!</p>
+                    <p class="game-desc">Собери нужную сумму чисел. </p>
                     <div class="game-features">
                         <span class="game-feature">Логика</span>
                         <span class="game-feature">Стратегия</span>
-                        <span class="game-feature">60+ уровней</span>
-                    </div>
+                                        </div>
                 </div>
                 
                 <!-- Asteroid Runner -->
                 <div class="game-card" onclick="startGame('asteroid-runner')">
                     <div class="game-icon">💥</div>
                     <h3 class="game-title">ASTEROID RUNNER</h3>
-                    <p class="game-desc">Стреляй в астероиды, уворачивайся, выживай как можно дольше!</p>
+                    <p class="game-desc">Стреляй в астероиды, уворачивайся, выживай</p>
                     <div class="game-features">
                         <span class="game-feature">Стрельба</span>
                         <span class="game-feature">Ускорение</span>
-                        <span class="game-feature">Прогрессия</span>
-                    </div>
+                            </div>
                 </div>
                 
                 <!-- Snake -->
                 <div class="game-card" onclick="startGame('snake')">
                     <div class="game-icon">🐍</div>
                     <h3 class="game-title">NEON SNAKE</h3>
-                    <p class="game-desc">Классическая змейка в неоновом стиле. Расти и не врезайся!</p>
+                    <p class="game-desc">Классическая змейка в неоновом стиле</p>
                     <div class="game-features">
                         <span class="game-feature">Классика</span>
                         <span class="game-feature">Неон</span>
-                        <span class="game-feature">Ускорение</span>
-                    </div>
+                                       </div>
                 </div>
             </div>
         </div>
@@ -911,7 +922,7 @@
             <div class="leaderboard-container">
                 <div class="leaderboard-header">
                     <h2 style="color: var(--accent-yellow); font-size: calc(28px * var(--phi));">
-                        🏆 ТОП ИГРОКИ
+                        🏆 Рейтинг
                     </h2>
                     <div class="game-filter">
                         <button class="filter-btn active" onclick="filterLeaderboard('all')">Все</button>
@@ -929,8 +940,6 @@
                             <th style="width: 150px;">Игра</th>
                             <th style="width: 150px;">Очки</th>
                             <th style="width: 150px;">Уровень</th>
-                            <th style="width: 150px;">Дата</th>
-                        </tr>
                     </thead>
                     <tbody id="leaderboard-body">
                         <!-- Данные загружаются динамически -->
@@ -978,21 +987,21 @@
         
         <!-- ФУТЕР -->
         <footer class="footer">
-            <p>© 2025 ARCADE GAMING PLATFORM | ВСЕ ПРАВА НА СТИЛЬ ЗАЩИЩЕНЫ</p>
-            <p style="margin-top: var(--size-sm);">Используйте стрелки для управления, ПРОБЕЛ для стрельбы</p>
+            <p>© 2025 ARCADE GAMING PLATFORM</p>
+            <p style="margin-top: var(--size-sm);">webarcade.dev/</p>
         </footer>
     </div>
     
     <!-- МОДАЛЬНОЕ ОКНО ДЛЯ ВВОДА ИМЕНИ -->
     <div id="nickname-modal" class="modal-overlay">
         <div class="modal">
-            <h2 class="modal-title">ВВЕДИТЕ ИМЯ ИГРОКА</h2>
+            <h2 class="modal-title">ВВЕДИТЕ ИМЯ</h2>
             <input type="text" id="player-name" class="modal-input" 
-                   placeholder="кто ты воин" maxlength="12"
+                   placeholder="ИМЯ" maxlength="12"
                    onkeypress="if(event.key === 'Enter') saveNickname()">
             <div class="modal-buttons">
                 <button class="modal-btn modal-btn-primary" onclick="saveNickname()">
-                    НАЧАТЬ ИГРАТЬ
+                    ИГРАТЬ
                 </button>
                 <button class="modal-btn modal-btn-secondary" onclick="cancelGame()">
                     ОТМЕНА
@@ -1014,13 +1023,13 @@
             </div>
             <div class="modal-buttons">
                 <button class="modal-btn modal-btn-primary" onclick="saveResultToLeaderboard()">
-                    💾 СОХРАНИТЬ РЕЗУЛЬТАТ
+                    💾 
                 </button>
                 <button class="modal-btn modal-btn-secondary" onclick="restartGame()">
-                    🔄 ИГРАТЬ СНОВА
+                    🔄 
                 </button>
                 <button class="modal-btn modal-btn-secondary" onclick="backToMain()">
-                    🏠 В МЕНЮ
+                    🏠 
                 </button>
             </div>
         </div>
@@ -1251,7 +1260,7 @@
                         objectStore.createIndex('game_id', 'game_id', { unique: false });
                         objectStore.createIndex('score', 'score', { unique: false });
                         objectStore.createIndex('player', 'player', { unique: false });
-                        objectStore.createIndex('date', 'date', { unique: false });
+                       
                     }
                 };
                 
@@ -1277,8 +1286,7 @@
                 game_id: gameId,
                 score: score,
                 level: level,
-                date: new Date().toISOString(),
-                time: currentTime
+                
             };
             
             const request = objectStore.add(scoreData);
@@ -1338,7 +1346,7 @@
                 tbody.innerHTML = `
                     <tr>
                         <td colspan="6" style="text-align: center; padding: 40px; color: var(--text-secondary);">
-                            🏁 НЕТ РЕЗУЛЬТАТОВ. БУДЬ ПЕРВЫМ!
+                            🏁 БУДЬ ПЕРВЫМ!
                         </td>
                     </tr>
                 `;
@@ -1395,7 +1403,7 @@
                     };">${gameNames[score.game_id]}</td>
                     <td class="score-cell">${score.score.toLocaleString()}</td>
                     <td>${score.level}</td>
-                    <td style="color: var(--text-secondary);">${formattedDate}</td>
+                   
                 `;
                 
                 tbody.appendChild(row);
@@ -1646,7 +1654,7 @@
                     <div style="position: relative; display: inline-block;">
                         <canvas id="asteroidCanvas" width="600" height="500" 
                                 style="border: 4px solid var(--accent-purple); border-radius: 15px; 
-                                       background: #0A0B0F; display: block;">
+                                       background: #0A0B0F; display: block; ">
                         </canvas>
                         <div id="game-overlay" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; 
                                                     background: rgba(0,0,0,0.8); color: white; 
@@ -1674,6 +1682,7 @@
                 </div>
             `;
             
+           
             const canvas = document.getElementById('asteroidCanvas');
             const ctx = canvas.getContext('2d');
             const overlay = document.getElementById('game-overlay');
